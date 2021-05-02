@@ -24,7 +24,12 @@ class PopularTabView extends StatelessWidget {
 
                 return InkWell(
                   onTap: () {
-                    //put later
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ReadNewsView(news: news),
+                      ),
+                    );
                   },
                   child: Container(
                     margin: EdgeInsets.only(right: 12.0),
@@ -51,7 +56,14 @@ class PopularTabView extends StatelessWidget {
             itemBuilder: (context, index) {
               var recent = recentList[index];
               return InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ReadNewsView(news: recent),
+                    ),
+                  );
+                },
                 child: Container(
                   width: double.infinity,
                   height: 135.0,
