@@ -22,6 +22,11 @@ class CircleButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(25.0),
           ),
+          child: Icon(
+            icon,
+            color: kGrey2,
+            size: 15.0,
+          ),
         ),
       ),
     );
