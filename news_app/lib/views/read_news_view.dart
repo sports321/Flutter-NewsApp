@@ -11,35 +11,32 @@ class ReadNewsView extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
-          preferredSize: Size.fromHeight(65.0),
-          child: Center(
-            child: SafeArea(
-              child: Padding(
-                padding: EdgeInsets.fromLTRB(18.0, 15.0, 18.0, 0),
-                child: Row(
-                  children: [
-                    CircleButton(
-                      icon: Icons.arrow_back_ios,
-                      onTap: () => Navigator.pop(context),
-                    ),
-                    Spacer(),
-                    CircleButton(
-                      icon: Icons.share,
-                      onTap: () {},
-                    ),
-                    CircleButton(
-                      icon: Icons.share,
-                      onTap: () {},
-                    ),
-                    CircleButton(
-                      icon: Icons.share,
-                      onTap: () {},
-                    ),
-                  ],
-                ),
+        preferredSize: Size.fromHeight(65.0),
+        child: Center(
+          child: SafeArea(
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(18.0, 15.0, 18.0, 0),
+              child: Row(
+                children: [
+                  CircleButton(
+                    icon: Icons.arrow_back_ios,
+                    onTap: () => Navigator.pop(context),
+                  ),
+                  Spacer(),
+                  CircleButton(
+                    icon: Icons.share,
+                    onTap: () {},
+                  ),
+                  CircleButton(
+                    icon: Icons.favorite_border,
+                    onTap: () {},
+                  ),
+                ],
               ),
             ),
-          )),
+          ),
+        ),
+      ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 18.0),
         child: ListView(
@@ -62,8 +59,10 @@ class ReadNewsView extends StatelessWidget {
             Row(
               children: [
                 Container(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 12.0, vertical: 15.0),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 12.0,
+                    vertical: 15.0,
+                  ),
                   decoration: BoxDecoration(
                     border: Border.all(color: kGrey3, width: 1.0),
                     borderRadius: BorderRadius.circular(25.0),
@@ -76,7 +75,7 @@ class ReadNewsView extends StatelessWidget {
                       ),
                       SizedBox(width: 6.0),
                       Text(
-                        news.category,
+                        news.category.name,
                         style: kCategoryTitle,
                       ),
                     ],
@@ -91,11 +90,11 @@ class ReadNewsView extends StatelessWidget {
                 Status(
                   icon: Icons.favorite_border,
                   total: news.favorite,
-                )
+                ),
               ],
             ),
             SizedBox(height: 12.0),
-            Text(news.title, style: kTittleCard.copyWith(fontSize: 28.0)),
+            Text(news.title, style: kTitleCard.copyWith(fontSize: 28.0)),
             SizedBox(height: 15.0),
             Row(
               children: [
@@ -120,7 +119,7 @@ class ReadNewsView extends StatelessWidget {
               news.content,
               style: descriptionStyle,
             ),
-            SizedBox(height: 25.0),
+            SizedBox(height: 25.0)
           ],
         ),
       ),
@@ -132,7 +131,6 @@ class Status extends StatelessWidget {
   final IconData icon;
   final String total;
   Status({this.icon, this.total});
-
   @override
   Widget build(BuildContext context) {
     return Row(

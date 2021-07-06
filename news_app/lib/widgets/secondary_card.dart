@@ -30,42 +30,44 @@ class SecondaryCard extends StatelessWidget {
           ),
           SizedBox(width: 12.0),
           Expanded(
-              child: Padding(
-                  padding: EdgeInsets.symmetric(vertical: 5.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+            child: Padding(
+              padding: EdgeInsets.symmetric(vertical: 5.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    news.title,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
+                    style: kTitleCard,
+                  ),
+                  SizedBox(height: 4.0),
+                  Text(
+                    news.subtitle,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
+                    style: kDetailContent,
+                  ),
+                  Spacer(),
+                  Row(
                     children: [
-                      Text(
-                        news.title,
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 2,
-                        style: kTittleCard,
+                      Text(news.time, style: kDetailContent),
+                      SizedBox(width: 10.0),
+                      CircleAvatar(
+                        radius: 5.0,
+                        backgroundColor: kGrey1,
                       ),
-                      SizedBox(height: 4.0),
+                      SizedBox(width: 10.0),
                       Text(
-                        news.subtitle,
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 2,
+                        "${news.estimate} min read",
                         style: kDetailContent,
-                      ),
-                      Spacer(),
-                      Row(
-                        children: [
-                          Text(news.time, style: kDetailContent),
-                          SizedBox(width: 10.0),
-                          CircleAvatar(
-                            radius: 5.0,
-                            backgroundColor: kGrey1,
-                          ),
-                          SizedBox(width: 10.0),
-                          Text(
-                            "${news.estimate} min read",
-                            style: kDetailContent,
-                          )
-                        ],
                       )
                     ],
-                  )))
+                  )
+                ],
+              ),
+            ),
+          )
         ],
       ),
     );

@@ -21,7 +21,7 @@ class HomeView extends StatelessWidget {
                   style: kNonActiveTabStyle,
                 ),
                 subtitle: Text(
-                  "Jessica Veranda",
+                  "Gina Sahiba",
                   textAlign: TextAlign.end,
                   style: kActiveTabStyle,
                 ),
@@ -29,11 +29,12 @@ class HomeView extends StatelessWidget {
                   width: 50.0,
                   height: 50.0,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
-                      image: DecorationImage(
-                        image: AssetImage("assets/ve.jpg"),
-                        fit: BoxFit.cover,
-                      )),
+                    borderRadius: BorderRadius.circular(10.0),
+                    image: DecorationImage(
+                      image: AssetImage("assets/g.jpg"),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
               ),
               Align(

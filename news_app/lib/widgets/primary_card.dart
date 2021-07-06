@@ -12,9 +12,8 @@ class PrimaryCard extends StatelessWidget {
       width: 300.0,
       padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 15.0),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15.0),
-        border: Border.all(color: kGrey3, width: 1.0),
-      ),
+          borderRadius: BorderRadius.circular(15.0),
+          border: Border.all(color: kGrey3, width: 1.0)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -25,10 +24,7 @@ class PrimaryCard extends StatelessWidget {
                 backgroundColor: kGrey1,
               ),
               SizedBox(width: 10.0),
-              Text(
-                news.category,
-                style: kCategoryTitle,
-              )
+              Text(news.category.name, style: kCategoryTitle)
             ],
           ),
           SizedBox(height: 5.0),
@@ -51,7 +47,7 @@ class PrimaryCard extends StatelessWidget {
             news.title,
             overflow: TextOverflow.ellipsis,
             maxLines: 2,
-            style: kTittleCard,
+            style: kTitleCard,
           ),
           SizedBox(height: 5.0),
           Row(
@@ -66,7 +62,7 @@ class PrimaryCard extends StatelessWidget {
                 backgroundColor: kGrey1,
               ),
               SizedBox(width: 10.0),
-              Text("${news.estimate} min read", style: kDetailContent),
+              Text("${news.estimate} min read", style: kDetailContent)
             ],
           )
         ],

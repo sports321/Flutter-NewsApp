@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:news_app/views/account_view.dart';
 import 'package:news_app/views/favorite_views.dart';
 import 'package:news_app/views/home_views.dart';
-import 'package:news_app/views/search_views.dart';
+import 'package:news_app/views/search_view.dart';
 
 class BottomNav extends StatefulWidget {
   @override
@@ -30,7 +30,9 @@ class _BottomNavState extends State<BottomNav> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SafeArea(child: _bottomNavView.elementAt(_selectedIndex)),
+      body: SafeArea(
+        child: _bottomNavView.elementAt(_selectedIndex),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
         currentIndex: _selectedIndex,
